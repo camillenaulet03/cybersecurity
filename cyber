@@ -1,0 +1,16 @@
+<?php
+
+include_once("./.inc/EnvBuilder.php");
+(new Env('.env'))->load();
+include_once("./.inc/manager.php");
+
+include_once("./database/index.php");
+
+$command = $argv[1];
+switch($command){
+    case "deploy": 
+        $db = Manager::db_connect();
+        DB_Manager::getInstance()->migrate();
+        echo getenv("DB_NAME");
+        break;
+}
