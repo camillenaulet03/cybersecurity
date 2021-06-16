@@ -95,6 +95,13 @@ class DB_Manager{
             array_push($this->migrations,$line["file"]);
         }
     }
+
+    public function insertToken($token) {
+        $manager = new Manager();
+        $db = $manager->db_connect();
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+        $db->prepare("INSERT INTO cybersecuritea.user (token) VALUES (\"".$token."\")")->execute();
+    }
 }
 
 
