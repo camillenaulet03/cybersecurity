@@ -16,7 +16,7 @@ class Discord {
       $this->OAUTH2_CLIENT_ID = getenv("OAUTH2_CLIENT_ID");
       $this->OAUTH2_CLIENT_SECRET = getenv("OAUTH2_CLIENT_SECRET");
       if(isset($_SESSION["token"])){
-        header("Location: ".$this->redirect);
+        //header("Location: ".$this->redirect);
       } else if($_GET['code']){
         $_SESSION["code"] = $_GET['code'];
         $this->getToken($_GET['code']);
@@ -68,7 +68,6 @@ class Discord {
 
       $headers[] = 'Accept: application/json';
 
-      var_dump($this->access_token);
       if($this->access_token){
           $headers[] = 'Authorization: Bearer ' . $this->access_token;
       }
