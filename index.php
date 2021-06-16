@@ -1,5 +1,5 @@
 <?php
+include "./.inc/discord.class.php";
 
-if(isset($_GET["connexion2"])){
-    echo "coucou";
-}
+session_start();
+$_SESSION["discord"] = new Discord;
