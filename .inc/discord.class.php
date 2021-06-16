@@ -1,8 +1,5 @@
 <?php
 
-include_once("./.inc/EnvBuilder.php");
-(new Env('.env'))->load();
-
 class Discord {
     private $OAUTH2_CLIENT_ID;
     private $OAUTH2_CLIENT_SECRET;
