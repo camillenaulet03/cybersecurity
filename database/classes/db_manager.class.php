@@ -100,7 +100,9 @@ class DB_Manager{
         $manager = new Manager();
         $db = $manager->db_connect();
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-        $db->prepare("INSERT INTO cybersecuritea.user (token) VALUES (\"".$token."\")")->execute();
+        $stm = $db->prepare("INSERT INTO cybersecuritea.user (token) VALUES (:token)");
+        $stm->bindParam(':token', $token);
+        $stm->execute();
     }
 }
 
