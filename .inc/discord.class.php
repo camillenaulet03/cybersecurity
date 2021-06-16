@@ -3,7 +3,6 @@
 class Discord {
     private $OAUTH2_CLIENT_ID;
     private $OAUTH2_CLIENT_SECRET;
-    private $BOT_TOKEN = 'NzQ1MzEyNjc4ODA5MTc0MDk4.Xzv8hQ.9WLSocZBQknht_lko84A7q4Fyo0';
     private $authorizeURL = 'https://discordapp.com/api/oauth2/authorize';
     private $tokenURL = 'https://discordapp.com/api/oauth2/token';
     private $apiURLbase = 'https://discordapp.com/api/users/@me';
